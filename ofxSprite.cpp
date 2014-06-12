@@ -153,3 +153,30 @@ ofRectangle ofxSprite::getBounds() {
 ofVec2f ofxSprite::getSize() {
     return ofPoint(getWidth(), getHeight());
 }
+
+
+
+//borg
+void ofxSprite::allocate(){
+    int v  = totalFrames;
+    while(v--){
+        assets[filenames[v]].setUseTexture(true);
+    }
+};
+
+
+void ofxSprite::deallocate(){
+    int v  = totalFrames;
+    while(v--){
+        assets[filenames[v]].setUseTexture(false);
+    }
+};
+
+void ofxSprite::destroy(){
+ int v  = totalFrames;
+
+    while(v--){
+        assets[filenames[v]].clear();
+
+    }
+};
