@@ -49,6 +49,13 @@ public:
     string id;
     bool visible;
     
+        //borg
+    //load to textures on GPU,  asset->setUseTexture(false);
+    void allocate();
+    void deallocate();
+    void destroy();
+
+    
 private:
     int totalFrames;
     int frameRate;
